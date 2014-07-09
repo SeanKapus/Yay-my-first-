@@ -1,0 +1,16 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+    <h2>War!</h2>
+    <p>Here's your hand...</p>
+    {% for card in user_cards %}
+        <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+        <img src="{{ card.image.url }}" width="100px">
+    {% endfor %}
+    <p>Dealers hand...</p>
+    {% for card in dealer_cards %}
+        <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+        <img src="{{ card.image.url }}" width="100px">
+    {% endfor %}
+    <li><br>{{result}}</li>
+{% endblock content %}

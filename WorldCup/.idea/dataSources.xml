@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2466372197">
+    <data-source source="LOCAL" name="Django default" uuid="942ef544-a45c-4cad-85e6-7b049fe2d112">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:worldcup</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

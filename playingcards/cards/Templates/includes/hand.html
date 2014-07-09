@@ -1,0 +1,7 @@
+
+{% for card in cards %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+{% endfor %}
+{% for card in cards %}
+    <img src="{{ card.image.url }}" width="100px">
+{% endfor %}

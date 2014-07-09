@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>{{ blog.name }}</h1>
+<a href="{% url "edit_blog" blog.id %}">Edit blog</a><br>
+<a href="{% url "delete_blog" blog.id %}">Delete blog</a><br>
+<a href="{% url "home" %}">Back to Book</a>
+<a href="{% url "blogs" %}">Back to BlogPost</a>
+</body>
+</html>

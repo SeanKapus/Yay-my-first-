@@ -1,0 +1,17 @@
+{% extends 'base_template.html' %}
+
+{% block title %}
+  user Profile
+{% endblock  %}
+
+{% block content %}
+<p>Hi {{user.username}}, you have 0 wins and 0 loses.</p><br>
+    <p>Your last loggin was {{ user.last_login }}</p>
+    <p>Your email address is {{ user.email }}</p>
+    <p> Time since user registered: {{ user.date_joined | timesince }} </p>
+    {%for game in war_games%}
+     <li>{{game.get_result_display}}</li>
+{#     {{create link that counts results and creates email creates a def in views  }}#}
+    {%endfor%}
+
+{% endblock content %}

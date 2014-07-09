@@ -1,0 +1,24 @@
+
+{% extends 'base_template.html' %}
+
+{% block content %}
+    <h2>Blackjack!</h2>
+    <h3>Here's your hand...</h3>
+    {% for card in user_cards %}
+     {% include 'includes/hand.html' %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+    <img src="{{ card.image.url }}" width="100px">
+    {% endfor %}
+
+    <h3>Here's the dealer's hand...</h3>
+    {% for card in dealer_cards %}
+     {% include 'includes/hand.html' %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+    <img src="{{ card.image.url }}" width="100px">
+    {% endfor %}
+
+
+    <h3> Current score:</h3>
+    <p> You: {{ your_score }}</p>
+    <p> Dealer: {{ dealer_score }}</p>
+    {% endblock content %}

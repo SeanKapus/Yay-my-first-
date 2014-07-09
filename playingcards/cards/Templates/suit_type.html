@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% load list_filters %}
+
+{% for card in cards|suit:"diamond"  %}
+    <p>Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}</p>
+{% endfor %}
+</body>
+</html>

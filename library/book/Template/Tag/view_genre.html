@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>{{ tag.name }}</h1>
+<a href="{% url "edit_tag" tag.id %}">Edit tag</a><br>
+<a href="{% url "delete_tag" tag.id %}">Delete tag</a><br>
+<a href="{% url "home" %}">Back to book</a>
+<a href="{% url "tags" %}">Back to BlogPost</a>
+</body>
+</html>

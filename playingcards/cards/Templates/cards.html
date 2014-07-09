@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1> Playing Cards </h1>
+<h3>Using a filter, truncate the suit so that only the first letter is shown.</h3>
+{% for card in cards %}
+    {{ card.get_suit_display|first }}-{{ card.rank }}
+{% endfor %}
+
+<h3>Change the "now" template tag, to display the full month and date only.</h3>
+{% now "F d" %}
+
+<h3>Using a template tag, put a link on our filter page that links to our tag page and vice versa</h3>
+<a href="{% url "card_filters" %}">Card Filters</a>
+
+<h3>Using a filter, get a random card to display from the list.</h3>
+{{ cards|random }}
+
+{% with cards|random as random_card %}
+    {{ random_card.rank }} - {{ random_card.get_suit_display }}
+{% endwith %}
+
+<h3>Using a filter, display only the last card from the list.</h3>
+{{ cards.all.reverse|first }}
+
+{% with cards.all.reverse|first as last_card %}
+    {{ last_card.rank }} - {{ last_card.get_suit_display }}
+{% endwith %}
+
+<h3>Use the regroup template tag to display the cards by their Suit.</h3>
+{% regroup cards|dictsort:"suit" by get_suit_display as suit_list %}
+<ul>
+{% for suit in suit_list %}
+    <li>Suit - {{ suit.grouper }}
+    <ul>
+        {% for item in suit.list %}
+          <li>{{ item.rank }}</li>
+        {% endfor %}
+    </ul>
+    </li>
+{% endfor %}
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>{{ genre.name }}</h1>
+<a href="{% url "edit_genre" genre.id %}">Edit genre</a><br>
+<a href="{% url "delete_genre" genre.id %}">Delete genre</a><br>
+<a href="{% url "home" %}">Back to Hollywood</a>
+<a href="{% url "genres" %}">Back to Genres</a>
+
+</body>
+</html>

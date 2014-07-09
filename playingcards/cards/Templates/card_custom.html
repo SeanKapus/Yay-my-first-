@@ -1,0 +1,16 @@
+{% load list_filters %}
+Suits
+{% for card in cards|suit:"spade" %}
+
+Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}
+{% endfor %}
+Ranks
+{% for card in cards|rank:"three" %}
+
+Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}
+{% endfor %}
+Random 5 cards
+{% for card in cards|shuffle|deal:5 %}
+
+Suit: {{ card.get_suit_display }}, Rank: {{ card.rank }}
+{% endfor %}

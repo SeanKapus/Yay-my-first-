@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Comments</h1>
+<ul>
+    {% for comment in comments %}
+        <li><a href="{% url "comment" .id %}">{{ comment.name }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url "my_form_view" %}">Back to book</a><br>
+<a href="{% url "new_comment" %}">Add new comment</a>
+</body>
+</html>

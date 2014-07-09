@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Add new Actor</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input value="Add new actor" type="submit">
+</form>
+
+</body>
+</html>

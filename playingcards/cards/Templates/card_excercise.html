@@ -1,0 +1,19 @@
+{#Using a filter, truncate the suit so that only the first letter is shown.#}
+{% for card in cards %} {{ card.get_suit_display|first }}-{{ card.rank }} {% endfor %}
+{#Change the "now" template tag, to display the full month and date only.#}
+{% now "F d" %}
+{#Using a template tag, put a link on our filter page that links to our tag page and vice versa#}
+{#Card Filters#}
+{#Using a filter, get a random card to display from the list.#}
+{{ cards|random }} {% with cards|random as random_card %} {{ random_card.rank }} - {{ random_card.get_suit_display }} {% endwith %}
+{#Using a filter, display only the last card from the list.#}
+{{ cards.all.reverse|first }} {% with cards.all.reverse|first as last_card %} {{ last_card.rank }} - {{ last_card.get_suit_display }} {% endwith %}
+{#Use the regroup template tag to display the cards by their Suit.#}
+{% regroup cards|dictsort:"suit" by get_suit_display as suit_list %}
+
+    {% for suit in suit_list %}
+    Suit - {{ suit.grouper }}
+        {% for item in suit.list %}
+        {{ item.rank }}
+        {% endfor %} 
+    {% endfor %} 

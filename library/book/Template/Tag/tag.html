@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Tags</h1>
+<ul>
+    {% for tag in tags %}
+        <li><a href="{% url "view_tag" tag.id %}">{{ tag.name }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url "home" %}">Back to book</a><br>
+<a href="{% url "new_tag" %}">Add new Tags</a>
+</body>
+</html>

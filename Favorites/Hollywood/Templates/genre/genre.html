@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Genres live here</h1>
+<ul>
+    {% for genre in genres %}
+        <li><a href="{% url "view_genre" genre.id %}">{{ genre.name }}</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url "home" %}">Back to Hollywood</a><br>
+<a href="{% url "new_genre" %}">Add new Genre</a>
+</body>
+</html>
